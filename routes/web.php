@@ -247,6 +247,21 @@ Route::middleware('auth')->group(function () {
                             Route::grid('district', 'DistrictController');
                         }
                     );
+                Route::namespace('Coa')
+                    ->group(
+                        function () {
+                            Route::grid('coa', 'CoaController');
+                            Route::get('getDetailCOA', 'CoaController@getDetailCOA')->name('getDetailCOA');
+                        }
+                    );
+
+                Route::namespace('Vendor')
+                    ->group(
+                        function () {
+                            Route::grid('vendor', 'VendorController');
+                            Route::grid('type-vendor', 'TypeVendorController');
+                        }
+                    );
             }
         );
 

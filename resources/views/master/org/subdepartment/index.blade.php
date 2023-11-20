@@ -7,7 +7,7 @@
 		</div>
 		<div class="ml-4 pb-2" style="width: 350px">
 			<select class="form-control filter-control base-plugin--select2-ajax"
-				data-url="{{ rut('ajax.selectStruct', 'parent_group') }}"
+				data-url="{{ rut('ajax.selectStruct', 'parent_subdepartment') }}"
 				data-post="parent_id"
 				data-placeholder="{{ __('Parent') }}">
 			</select>

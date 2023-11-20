@@ -73,11 +73,28 @@ return [
                         'title' => 'Kota / Kabupaten',
                         'url' => '/master/geografis/city'
                     ],
-                    // [
-                    //     'name' => 'master_district',
-                    //     'title' => 'Kecamatan',
-                    //     'url' => '/master/geografis/district'
-                    // ],
+                ]
+            ],
+            [
+                'name' => 'master.coa',
+                'title' => 'Chart of Accounts',
+                'url' => '/master/coa',
+            ],
+            [
+                'name' => 'Vendor',
+                'title' => 'Vendor',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'master.type-vendor',
+                        'title' => 'Jenis',
+                        'url' => '/master/type-vendor',
+                    ],
+                    [
+                        'name' => 'master.vendor',
+                        'title' => 'Vendor',
+                        'url' => '/master/vendor',
+                    ],
                 ]
             ],
         ]
@@ -108,11 +125,6 @@ return [
                 'title' => 'Audit Trail',
                 'url' => '/setting/activity',
             ],
-            // [
-            //     'name' => 'setting_reset',
-            //     'title' => 'Reset Data',
-            //     'url' => '/setting/reset-data',
-            // ],
         ]
     ],
 ];

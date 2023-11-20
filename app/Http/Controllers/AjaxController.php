@@ -232,48 +232,17 @@ class AjaxController extends Controller
             case 'all':
                 $items = $items;
                 break;
-            case 'with_parent':
-                $items = $items->where('parent_id', $request->parent_id);
-                break;
-            case 'parent_boc':
+            case 'parent_bod':
                 $items = $items->whereIn('level', ['root']);
                 break;
-            case 'parent_bod':
-                $items = $items->whereIn('level', ['root', 'bod']);
-                break;
-            case 'parent_division':
-                $items = $items->whereIn('level', ['bod']);
-                break;
             case 'parent_department':
-                $items = $items->whereIn('level', ['division']);
-                break;
-            case 'parent_branch':
                 $items = $items->whereIn('level', ['bod']);
                 break;
-            case 'parent_subbranch':
-                $items = $items->whereIn('level', ['branch']);
+            case 'parent_subdepartment':
+                $items = $items->whereIn('level', ['department']);
                 break;
-            case 'parent_cash':
-                $items = $items->whereIn('level', ['branch', 'subbranch']);
-                break;
-            case 'parent_payment':
-                $items = $items->whereIn('level', ['branch', 'subbranch', 'cash']);
-                break;
-            case 'parent_group':
-                $items = $items->whereIn('level', ['division', 'sbu']);
-                break;
-            case 'parent_position':
-                $items = $items->whereNotIn('level', ['root', 'group']);
-                break;
-            case 'object_audit_report':
-                $items = $items->whereNotIn('level', ['root', 'group', 'bod', 'boc']);
-                break;
-            case 'object_audit':
-                $items = $items->where('level', $request->object_type);
-                break;
-            case 'position_with_req':
-                $items = $items
-                    ->whereNotIn('level', ['root']);
+            case 'parent_subsection':
+                $items = $items->whereIn('level', ['subdepartment']);
                 break;
 
             default:
@@ -289,7 +258,7 @@ class AjaxController extends Controller
         $results = [];
         $more = false;
 
-        $levels = ['root', 'boc', 'bod', 'division', 'seksi','branch', 'group'];
+        $levels = ['root','bod', 'department', 'subdepartment', 'subsection'];
         $i = 0;
         foreach ($levels as $level) {
             if ($items->where('level', $level)->count()) {

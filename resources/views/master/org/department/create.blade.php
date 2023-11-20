@@ -8,7 +8,7 @@
 		<label class="col-sm-12 col-form-label">{{ __('Parent') }}</label>
 		<div class="col-sm-12 parent-group">
 			<select name="parent_id" class="form-control base-plugin--select2-ajax"
-				data-url="{{ rut('ajax.selectStruct', 'parent_division') }}"
+				data-url="{{ rut('ajax.selectStruct', 'parent_department') }}"
 				data-placeholder="{{ __('Pilih Salah Satu') }}">
 			</select>
 			<div class="form-text text-muted">*Parent berupa Direktur</div>
