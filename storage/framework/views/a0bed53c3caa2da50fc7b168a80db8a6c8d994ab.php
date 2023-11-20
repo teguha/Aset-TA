@@ -1,0 +1,14 @@
+
+
+<?php $__env->startSection('filters'); ?>
+	<div class="row">
+		<div class="col-12 col-sm-6 col-xl-3 pb-2">
+			<input type="text" class="form-control filter-control" data-post="name" placeholder="<?php echo e(__('Nama')); ?>">
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('buttons'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.lists', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\PROJECT WEB\project-asset\resources\views/master/org/root/index.blade.php ENDPATH**/ ?>
