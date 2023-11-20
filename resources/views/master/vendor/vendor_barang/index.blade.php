@@ -7,7 +7,7 @@
     </div>
 @endsection
 
-@section('buttons-right')
+@section('buttons')
 	@if (auth()->user()->checkPerms($perms.'.create'))
 		@include('layouts.forms.btnAdd')
 	@endif

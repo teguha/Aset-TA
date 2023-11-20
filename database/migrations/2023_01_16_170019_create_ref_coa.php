@@ -17,9 +17,9 @@ class CreateRefCoa extends Migration
             'ref_coa',
             function (Blueprint $table) {
                 $table->id();
-                $table->integer('kode_akun')->unsigned()->unique();
-                $table->string('nama_akun')->unique()->nullable();
-                $table->enum('tipe_akun', ['biaya', 'aset'])->nullable();
+                $table->string('kode_akun')->unique();
+                $table->string('nama_akun')->nullable();
+                $table->enum('tipe_akun', ['KIB A', 'KIB B', 'KIB C', 'KIB D', 'KIB E', 'KIB F'])->nullable();
                 $table->string('deskripsi')->nullable();
                 $table->commonFields();
             }
